@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sat Jun  4 21:18:54 2022
+# Make data base, printed on Sat Jun  4 22:05:00 2022
 
 # Variables
 
@@ -279,13 +279,13 @@ LC_IDENTIFICATION = ko_KR.UTF-8
 # environment
 LC_ADDRESS = ko_KR.UTF-8
 # environment
+ 
 LANG = C
 # environment
 TERM = xterm-256color
 # environment
 VSCODE_PID = 18229
 # variable set hash-table stats:
- 
 # Load=136/1024=13%, Rehash=0, Collisions=21/158=13%
 
 # Pattern-specific Variable Values
@@ -352,6 +352,6 @@ GNUmakefile:
 # strcache performance: lookups = 30 / hit rate = 10%
 # hash-table stats:
 # Load=27/8192=0%, Rehash=0, Collisions=1/30=3%
-# Finished Make data base on Sat Jun  4 21:18:54 2022
+# Finished Make data base on Sat Jun  4 22:05:00 2022
 
  
