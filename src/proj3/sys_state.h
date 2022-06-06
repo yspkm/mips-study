@@ -70,7 +70,7 @@ typedef struct sys_state_s {
 } sys_state_t;
 
 // 메모리 할당 후 우선 0xff로 초기화한다. 
-int init_sys_state_t(sys_state_t *state);
+void init_sys_state_t(sys_state_t *state);
 // instr mem을 로드한다.
 int loadImemFile(sys_state_t *state, char *fname);
 // dmem을 로드한다. 

@@ -1,6 +1,5 @@
 CC=gcc
-CCFLAGS = -I. 
-# -Wall -I.
+CCFLAGS = -Wall -I.
 
 HDIR = .
 TDIR = .

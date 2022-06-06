@@ -14,7 +14,8 @@ void init_cache(sys_state_t *state)
         state->data_size_B = 4096;
         break;
     default:
-        printf("error! sys_state.c, Line 163\n");
+        // printf("type error");
+        break;
     }
 
     state->cache_entry_len = get_cache_entry_len(state);
@@ -35,13 +36,21 @@ void init_cache(sys_state_t *state)
 
 int get_cache_entry_len(sys_state_t *state)
 {
+    int ret = 0;
+
     switch (state->cache_types)
     {
     case TYPE_1:
-        return state->data_size_B / state->block_size_B;
+        ret = state->data_size_B / state->block_size_B;
+        break;
     case TYPE_2:
-        return (state->data_size_B / state->block_size_B) / 2;
+        ret = (state->data_size_B / state->block_size_B) / 2;
+        break;
+    default:
+        break;
     }
+
+    return ret;
 }
 
 void read_cache(sys_state_t *state, word_t addr)
@@ -165,7 +174,7 @@ void write_cache(sys_state_t *state, word_t addr)
     }
 }
 
-void free_cache(sys_state_t* state)
+void free_cache(sys_state_t *state)
 {
     free(state->cache_entries);
 }

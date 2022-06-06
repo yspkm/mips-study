@@ -1,6 +1,6 @@
 make --dry-run --keep-going --print-directory
-make: Entering directory '/home/yspkm/work/assignments/temp/single-cycle-cpu-simulator'
-make: Leaving directory '/home/yspkm/work/assignments/temp/single-cycle-cpu-simulator'
+make: Entering directory '/home/yspkm/work/programming/single-cycle-cpu-simulator'
+make: Leaving directory '/home/yspkm/work/programming/single-cycle-cpu-simulator'
  
 make: *** No targets specified and no makefile found.  Stop.
 

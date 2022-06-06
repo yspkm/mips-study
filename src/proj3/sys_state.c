@@ -19,14 +19,18 @@ int getDmemIndex(unsigned dmem_addr)
     return (dmem_addr - 0x10000000) / 4;
 }
 
-int init_sys_state_t (sys_state_t * state)
+void init_sys_state_t (sys_state_t * state)
 {
-    memset(state->dmem, 0xff, MAX_MEM_LEN * sizeof(word_t));
-    memset(state->imem, 0xff, MAX_MEM_LEN * sizeof(word_t));
+    size_t mem_size = sizeof(word_t) * MAX_MEM_LEN;
+
+    memset(state->dmem, 0xff, sizeof(word_t) * mem_size);
+    memset(state->imem, 0xff, sizeof(word_t) * mem_size);
+
     for (int i = 0; i < 32; i++)
     {
         state->x[i] = 0x0;
     }
+
     state->pc = 0;
     state->pc_plus_4 = 0;
 }
@@ -120,8 +124,9 @@ int loadImemFile(sys_state_t *state, char *fname)
 
 void set_next_instruction_to_pc(sys_state_t *state)
 {
-    state->pc + 0x4;
+    state->pc += 0x4;
 }
+
 word_t get_cur_instruction(sys_state_t *state)
 {
     return state->imem[state->pc];

@@ -2,27 +2,22 @@
 
 word_t extract_n2mbits(word_t x, int n, int m)
 {
-    word_t ret = 0, digit = 1;
-    word_t temp_x = x;
-    char temp[32];
-    for (int i = 0; i < 32; i++)
-    {
-        temp[i] = ((temp_x % 2 == 1) ? '1' : '0');
-        temp_x /= 2;
-    }
+    word_t mask = 0x0;
+
     if (n < m)
     {
-        printf("reader.c 16!!!!\n");
-        return 0x12345678;
+        // n = n + m;
+        // m = n - m;
+        // n = n - m;
+        return 0x0;
     }
-    ret = 0;
-    digit = 1;
-    for (int i = m; i <= n; i++)
-    {
-        ret += digit * (temp[i] == '1' ? 1 : 0);
-        digit *= 2;
-    }
-    return ret;
+
+    mask = (~0x0);
+    mask >>= m;
+    mask <<= m + (31 - n);
+    mask >>= (31 - n);
+
+    return (x & mask) >> m;
 }
 
 // R/I/J

@@ -1,1 +1,1 @@
-# mips-sim
+# single-cycle-cpu-simulator 

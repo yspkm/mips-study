@@ -112,7 +112,10 @@ data_set_t *get_data_set(data_set_t *db, sys_state_t *state, word_t instr)
     db->rt_val = getRegVal(state, db->rt_id);
 
     db->shamt = get_shamt(instr);
+
+    return db;
 }
+
 void add(sys_state_t *state, word_t instr)
 {
     data_set_t db;
